@@ -1,0 +1,28 @@
+#! /bin/sh
+
+# Autostart apps
+pgrep -x sxhkd > /dev/null || sxhkd &
+picom &
+nitrogen --restore &
+xsetroot -cursor_name left_ptr
+bash ~/.config/polybar/launch.sh --forest &
+/usr/bin/dunst &
+
+setxkbmap -option caps:swapescape
+
+bspc monitor -d code web obsidian music chat trash
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a Emacs state=tiled
+bspc rule -a Zathura state=tiled
