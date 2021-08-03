@@ -10,7 +10,7 @@ bash ~/.config/polybar/launch.sh --forest &
 
 setxkbmap -option caps:swapescape
 
-bspc monitor -d code web obsidian music chat trash
+bspc monitor -d code web obsidian video-conference chat trash
 
 bspc config border_width         2
 bspc config window_gap          12
